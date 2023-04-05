@@ -1,4 +1,5 @@
 /* Database schema to keep the structure of entire database. */
+
 CREATE TABLE animals (
     id integer NOT NULL GENERATED ALWAYS AS IDENTITY,
     name character varying(20),
