@@ -8,4 +8,7 @@ CREATE TABLE animals (
     neutered boolean,
     weigth_kg numeric,
     PRIMARY KEY (id)
-)
+);
+
+ALTER TABLE animals
+ADD species TEXT;
