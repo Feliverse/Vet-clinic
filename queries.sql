@@ -15,15 +15,18 @@ BEGIN;
 UPDATE animals SET species='unspecified';
 SELECT * FROM animals;
 ROLLBACK;
+SELECT species from animals;
 
 BEGIN;
 UPDATE animals SET species='digimon' WHERE name LIKE '%mon';
 UPDATE animals SET species='pokemon' WHERE species IS NULL;
 COMMIT;
+SELECT species from animals;
 
 BEGIN;
 DELETE FROM animals;
 ROLLBACK;
+SELECT species from animals;
 
 BEGIN;
 DELETE FROM animals WHERE date_of_birth>'2022-01-01';
@@ -32,6 +35,7 @@ UPDATE animals SET weight_kg=-1*weight_kg;
 ROLLBACK TO dateOfBirth;
 UPDATE animals SET weight_kg=-1*weight_kg WHERE weight_kg<0;
 COMMIT; 
+SELECT * from animals;
 
 /*How many animals are there?*/
 SELECT COUNT(*) FROM animals;
