@@ -139,15 +139,17 @@ JOIN vets vt ON v.vets_id=vt.id
 ORDER BY v.date DESC LIMIT 1;
 
 /*How many visits were with a vet that did not specialize in that animal's species?*/
-SELECT vets.name, s.species_id FROM vets 
-LEFT JOIN specializations s ON s.vets_id=vets.id 
-WHERE species_id IS NULL;
+SELECT count(*)
+  FROM visits
+  LEFT JOIN animals ON animals.id = visits.animals_id
+  LEFT JOIN vets ON vets.id = visits.vets_id
+  WHERE animals.species_id NOT IN (SELECT species_id FROM specializations WHERE vets_id = vets.id)
 
 /*What specialty should Maisy Smith consider getting? Look for the species she gets the most.*/
-SELECT species.name, COUNT(species.name) AS count_species 
-FROM vets 
-LEFT JOIN specializations s ON s.vets_id=vets.id 
-JOIN animals ON animals.species_id=s.species_id 
-JOIN species ON species.id=s.species_id 
-WHERE vets.name='Maisy Smith' 
-GROUP BY species.name ORDER BY count_species DESC LIMIT 1;
+SELECT species.name, count(*)
+  FROM visits
+  LEFT JOIN animals ON animals.id = visits.animals_id
+  LEFT JOIN species ON animals.species_id = species.id
+  LEFT JOIN vets ON vets.id = visits.vets_id
+  WHERE vets.name = 'Maisy Smith'
+  GROUP BY species.name;
