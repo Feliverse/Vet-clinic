@@ -98,6 +98,12 @@ Check queries.sql for examples of queries that can be run on a newly created dat
 - Twitter: [@FelipeHaybar](https://twitter.com/FelipeHaybar)
 - LinkedIn: [FelipeHaybar](https://linkedin.com/in/FelipeHaybar)
 
+👤 **Francis Uche**
+
+- GitHub: [@Francis3400](https://github.com/Francis3400)
+- Twitter: [@Francisblinkz](https://twitter.com/Francisblinkz)
+- LinkedIn: [Francis Uche](https://linkedin.com/in/francis-uche)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
