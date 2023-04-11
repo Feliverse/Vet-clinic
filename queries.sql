@@ -162,12 +162,6 @@ SELECT species.name, count(*)
  EXPLAIN ANALYZE SELECT * FROM visits where vet_id = 2;
  EXPLAIN ANALYZE SELECT * FROM owners where email = 'owner_18327@mail.com';
  
- /*Apply Indexes to improbe the preformance*/
- 
- CREATE INDEX animals_id_index ON visits(animal_id ASC);
- CREATE INDEX vets_id_index ON visits(vet_id, animal_id, date_of_visit);
- CREATE INDEX email_index ON owners(email ASC);
- 
  /*After Index the times reduced significatly */
  EXPLAIN ANALYZE SELECT COUNT(*) FROM visits where animal_id = 4;
  EXPLAIN ANALYZE SELECT * FROM visits where vet_id = 2;
