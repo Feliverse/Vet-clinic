@@ -101,6 +101,7 @@ Check queries.sql for examples of queries that can be run on a newly created dat
 - Twitter: [@FelipeHaybar](https://twitter.com/FelipeHaybar)
 - LinkedIn: [FelipeHaybar](https://linkedin.com/in/FelipeHaybar)
 
+
 👤 **Uche Francis**
 
 - GitHub: [@Francis3400](https://github.com/francis3400)
