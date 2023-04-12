@@ -39,3 +39,26 @@ CREATE TABLE "patients"(
     "name" VARCHAR(255) NOT NULL,
     "date_of_birth" BIGINT NOT NULL 
 );
+
+  /*Table many-to-many: historial_treatments*/
+
+CREATE TABLE "historial_treatments"(
+    "medical_history_id" INTEGER NOT NULL,
+    "treatment_id" INTEGER NOT NULL
+);
+/* Alter tables to add constraint and foraingn keys*/ 
+ALTER TABLE
+    "historial_treatments" ADD CONSTRAINT "historial_treatments_treatment_id_foreign" FOREIGN KEY("treatment_id") REFERENCES "treatments"("id");
+ALTER TABLE
+    "historial_treatments" ADD CONSTRAINT "historial_treatments_medical_history_id_foreign" FOREIGN KEY("medical_history_id") REFERENCES "medical_histories"("id");
+
+ALTER TABLE
+    "patients" ADD PRIMARY KEY("id");
+ALTER TABLE
+    "invoice_items" ADD CONSTRAINT "invoice_items_invoice_id_foreign" FOREIGN KEY("invoice_id") REFERENCES "invoices"("id");
+ALTER TABLE
+    "medical_histories" ADD CONSTRAINT "medical_histories_patient_id_foreign" FOREIGN KEY("patient_id") REFERENCES "patients"("id");
+ALTER TABLE
+    "invoice_items" ADD CONSTRAINT "invoice_items_treatment_foreign" FOREIGN KEY("treatment") REFERENCES "treatments"("id");
+ALTER TABLE
+    "invoices" ADD CONSTRAINT "invoices_medical_history_id_foreign" FOREIGN KEY("medical_history_id") REFERENCES "medical_histories"("id");
