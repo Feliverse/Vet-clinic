@@ -1,5 +1,7 @@
 # Vet clinic Data Base
-<!--
+
+<!--![Captura](https://user-images.githubusercontent.com/114632980/231491822-ea12327d-51f4-4d18-97c4-6d41a9342719.JPG)
+
 HOW TO USE:
 This is an example of how you may give instructions on setting up your project locally.
 
